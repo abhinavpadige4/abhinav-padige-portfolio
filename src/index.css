@@ -2,43 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Custom glassmorphism styles */
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+  --primary: #a855f7;
+  --secondary: #c084fc;
+  --accent: #e9d5ff;
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 .glass-card {
-  @apply bg-white/10 backdrop-blur-sm border border-white/20 shadow-glass;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+  transition: all 0.3s ease;
 }
 
-.glass-card-hover {
-  @apply transition-all duration-300 hover:shadow-glass-hover hover:scale-[1.02];
+.glass-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.5);
 }
 
-/* Gradient text */
 .gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.gradient-border {
+  border-image: linear-gradient(to right, var(--primary), var(--secondary)) 1;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-gray-900;
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-gradient-to-r from-purple-500 to-pink-500 rounded-full;
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -8px rgba(0, 0, 0, 0.1);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gradient-to-r from-purple-600 to-pink-600;
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease-out forwards;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Focus outline */
-*:focus-visible {
-  @apply outline-none ring-2 ring-ring-offset-2 ring-indigo-500;
-}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
