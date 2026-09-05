@@ -1,1 +1,43 @@
-import { motion } from 'framer-motion'\nimport { GitHub, LinkedIn, Mail, ExternalLink } from 'lucide-react'\n\nconst Footer = () => {\n  return (\n    <footer className='bg-gray-900/50 backdrop-blur-sm border-t border-gray-800/50'>\n      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12'>\n        <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-4 text-center'>\n          <motion.div\n            initial={{ opacity: 0, y: 10 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: 0.1, duration: 0.6 }}\n          >\n            <h3 className='mb-4 text-xl font-bold text-white'>\n              Abhinav Padige\n            </h3>\n            <p className='text-gray-400'>\n              ML Engineer | Full-Stack Developer\n            </p>\n          </motion.div>\n\n          <motion.div\n            initial={{ opacity: 0, y: 10 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: 0.2, duration: 0.6 }}\n          >\n            <h4 className='mb-3 text-lg font-semibold text-white'>\n              Connect\n            </h4>\n            <div className='flex justify-center space-x-4'>\n              <a\n                href='https://linkedin.com/in/abhinav-padige'\n                target='_blank'\n                rel='noopener noreferrer'\n                className='flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                <LinkedIn className='h-4 w-4' />\n                <span>LinkedIn</span>\n              </a>\n              <a\n                href='https://github.com/abhinavpadige'\n                target='_blank'\n                rel='noopener noreferrer'\n                className='flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                <GitHub className='h-4 w-4' />\n                <span>GitHub</span>\n              </a>\n              <a\n                href='mailto:abhinav.padige@example.com'\n                className='flex items-center gap-2 text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                <Mail className='h-4 w-4' />\n                <span>Email</span>\n              </a>\n            </div>\n          </motion.div>\n\n          <motion.div\n            initial={{ opacity: 0, y: 10 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: 0.3, duration: 0.6 }}\n          >\n            <h4 className='mb-3 text-lg font-semibold text-white'>\n              Quick Links\n            </h4>\n            <div className='space-y-2'>\n              <a\n                href='#about'\n                className='block text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                About Me\n              </a>\n              <a\n                href='#skills'\n                className='block text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                Skills\n              </a>\n              <a\n                href='#projects'\n                className='block text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                Projects\n              </a>\n              <a\n                href='#contact'\n                className='block text-gray-300 hover:text-white transition-colors duration-300'\n              >\n                Contact\n              </a>\n            </div>\n          </motion.div>\n\n          <motion.div\n            initial={{ opacity: 0, y: 10 }}\n            animate={{ opacity: 1, y: 0 }}\n            transition={{ delay: 0.4, duration: 0.6 }}\n          >\n            <h4 className='mb-3 text-lg font-semibold text-white'>\n              Stats\n            </h4>\n            <div className='space-y-2'>\n              <p className='text-gray-300'>\n                <span className='font-medium text-white'>3+</span> Years Experience\n              </p>\n              <p className='text-gray-300'>\n                <span className='font-medium text-white'>15+</span> Projects Completed\n              </p>\n              <p className='text-gray-300'>\n                <span className='font-medium text-white'>5+</span> Certifications\n              </p>\n              <p className='text-gray-300'>\n                <span className='font-medium text-white'>Available</span> for hire\n              </p>\n            </div>\n          </motion.div>\n        </div>\n\n        <div className='mt-12 pt-8 border-t border-gray-800/50'>\n          <p className='text-center text-gray-500 text-sm'>\n            © {new Date().getFullYear()} Abhinav Padige. All rights reserved.\n          </p>\n        </div>\n      </div>\n    </footer>\n  )\n}\n\nexport default Footer\n
+import React from 'react';
+
+const Footer: React.FC = () => {
+  return (
+    <footer className="bg-gray-900/50 backdrop-blur-sm border-t border-white/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="text-center">
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} Abhinav Padige. All rights reserved.
+          </p>
+          <div className="mt-4 flex justify-center space-x-6">
+            <a
+              href="https://linkedin.com/in/abhinavpadige"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-purple-400 transition-colors"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://github.com/abhinavpadige"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-purple-400 transition-colors"
+            >
+              GitHub
+            </a>
+            <a
+              href="https://twitter.com/abhinavpadige"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-purple-400 transition-colors"
+            >
+              Twitter
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
