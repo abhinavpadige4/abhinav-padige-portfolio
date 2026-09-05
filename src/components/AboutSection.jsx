@@ -7,8 +7,8 @@ const AboutSection = () => {
         <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
           About Me
         </h2>
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 p-8">
-          <p className="text-lg text-gray-300 leading-relaxed">
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 p-8">
+          <p className="text-lg leading-relaxed text-white/90">
             I am a passionate AI engineer and full-stack developer with expertise in machine learning, deep learning, and cloud technologies. I enjoy building scalable applications and solving complex problems.
           </p>
         </div>
