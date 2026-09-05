@@ -20,18 +20,12 @@ const Contact: React.FC = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
+    // Simulate API call
     try {
-      // Simulate API call - replace with actual backend endpoint
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In production, this would be a real API call:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // });
-      
-      setSubmitStatus({ type: 'success', message: 'Message sent successfully! I\'ll get back to you soon.' });
+      // In real app, replace with actual API endpoint
+      // const response = await fetch('/api/contact', { method: 'POST', body: JSON.stringify(formData) });
+      setSubmitStatus({ type: 'success', message: 'Message sent successfully!' });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       setSubmitStatus({ type: 'error', message: 'Failed to send message. Please try again.' });
@@ -41,14 +35,13 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section className="py-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
           Contact Me
         </h2>
-        
         {submitStatus && (
-          <div className={`mb-6 p-4 rounded-lg text-center ${
+          <div className={`mb-8 p-4 rounded-lg text-center ${
             submitStatus.type === 'success' 
               ? 'bg-green-500/20 border border-green-500/30 text-green-400' 
               : 'bg-red-500/20 border border-red-500/30 text-red-400'
@@ -56,7 +49,6 @@ const Contact: React.FC = () => {
             {submitStatus.message}
           </div>
         )}
-
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <div>
@@ -69,10 +61,9 @@ const Contact: React.FC = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
                 placeholder="Your name"
                 required
-                disabled={isSubmitting}
               />
             </div>
             <div>
@@ -85,14 +76,12 @@ const Contact: React.FC = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
+                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
                 placeholder="your@email.com"
                 required
-                disabled={isSubmitting}
               />
             </div>
           </div>
-          
           <div>
             <label htmlFor="subject" className="block text-sm font-medium text-gray-300 mb-2">
               Subject
@@ -103,13 +92,11 @@ const Contact: React.FC = () => {
               name="subject"
               value={formData.subject}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
               placeholder="Subject of your message"
               required
-              disabled={isSubmitting}
             />
           </div>
-          
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
               Message
@@ -117,16 +104,14 @@ const Contact: React.FC = () => {
             <textarea
               id="message"
               name="message"
+              rows={5}
               value={formData.message}
               onChange={handleChange}
-              rows={5}
-              className="w-full px-4 py-3 bg-gray-800/50 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400 resize-none"
-              placeholder="Your message..."
+              className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-white placeholder-gray-400"
+              placeholder="Your message here..."
               required
-              disabled={isSubmitting}
             />
           </div>
-          
           <button
             type="submit"
             disabled={isSubmitting}
