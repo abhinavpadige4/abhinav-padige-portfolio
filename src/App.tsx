@@ -1,1 +1,26 @@
-import React from 'react'\nimport Navbar from './components/Navbar'\nimport HeroSection from './components/HeroSection'\nimport AboutMe from './components/AboutMe'\nimport Skills from './components/Skills'\nimport Education from './components/Education'\nimport Projects from './components/Projects'\nimport Contact from './components/Contact'\n\nfunction App() {\n  return (\n    <div className="min-h-screen bg-gradient-to-b from-gray-950 via-gray-900 to-gray-950 text-white font-sans antialiased">\n      <Navbar />\n      <main className="py-12 px-4 max-w-7xl mx-auto">\n        <HeroSection />\n        <AboutMe />\n        <Skills />\n        <Education />\n        <Projects />\n        <Contact />\n      </main>\n    </div>\n  );\n}\n\nexport default App;\n
+import React from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import AboutMe from './components/AboutMe';
+import Skills from './components/Skills';
+import Education from './components/Education';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 text-white font-sans antialiased">
+      <Navbar />
+      <main className="py-16">
+        <Hero />
+        <AboutMe />
+        <Skills />
+        <Education />
+        <Projects />
+        <Contact />
+      </main>
+    </div>
+  );
+}
+
+export default App;
