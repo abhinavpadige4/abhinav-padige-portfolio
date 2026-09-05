@@ -1,0 +1,82 @@
+/* Hero Section Specific Styles */
+.hero-section {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(20px) rotate(-5deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    py-16;
+  }
+  
+  .hero-section h1 {
+    text-3xl;
+  }
+  
+  .hero-section p {
+    text-lg;
+  }
+  
+  .hero-section a {
+    px-6 py-3 text-base;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    py-12;
+  }
+  
+  .hero-section h1 {
+    text-2xl;
+  }
+  
+  .hero-section p {
+    text-base;
+  }
+  
+  .hero-section a {
+    px-4 py-2 text-sm;
+  }
+}
