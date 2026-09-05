@@ -13,100 +13,32 @@
 
 /* Gradient text */
 .gradient-text {
-  @apply bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent;
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500;
 }
 
-/* Custom animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
 }
 
-.float-animation {
-  animation: float 6s ease-in-out infinite;
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
 }
 
-/* Smooth scroll */
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600;
+}
+
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom cursor */
-* {
-  cursor: none;
-}
-
-.cursor-dot {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(168, 85, 247, 0.7);
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s ease-out;
-}
-
-.cursor-outline {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 2px solid rgba(168, 85, 247, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease-out;
-}
-
-/* Hide default cursor */
-body {
-  overflow-x: hidden;
-}
-
-/* Responsive typography */
-h1 {
-  @apply text-4xl md:text-5xl lg:text-6xl;
-}
-
-h2 {
-  @apply text-3xl md:text-4xl;
-}
-
-h3 {
-  @apply text-2xl md:text-3xl;
-}
-
-/* Skill badge hover */
-.skill-badge-hover {
-  @apply transition-all duration-300 hover:bg-white/20 hover:border-white/30 hover:shadow-glass;
-}
-
-/* Project card hover */
-.project-card-hover {
-  @apply transition-all duration-300 hover:shadow-glass-hover hover:scale-[1.02];
-}
-
-/* Form input focus */
-.input-focus {
-  @apply focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500;
-}
-
-/* Button hover */
-.btn-hover {
-  @apply transition-all duration-300 hover:bg-purple-600 hover:shadow-glass;
-}
-
-/* Dark mode specific */
-.dark .glass-card {
-  @apply bg-white/10 backdrop-blur-sm border border-white/20;
-}
-
-.dark .glass-card-hover {
-  @apply hover:bg-white/20 hover:border-white/30;
+/* Focus outline */
+*:focus-visible {
+  @apply outline-none ring-2 ring-ring-offset-2 ring-indigo-500;
 }
