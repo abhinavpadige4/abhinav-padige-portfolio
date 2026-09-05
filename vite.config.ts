@@ -1,12 +1,11 @@
-```typescript
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    open: true,
+    open: true
   },
   build: {
     outDir: 'dist',
@@ -14,10 +13,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          motion: ['framer-motion'],
-        },
-      },
-    },
-  },
-});
+          vendor: ['react', 'react-dom']
+        }
+      }
+    }
+  }
+})
