@@ -1,95 +1,106 @@
 import React from 'react';
 
-const projects = [
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tech: string[];
+  image: string;
+  github: string;
+  live?: string;
+}
+
+const projects: Project[] = [
   {
     id: 1,
     title: "AI-Powered Resume Analyzer",
-    description: "Built a full-stack application using FastAPI and React to analyze resumes against job descriptions using NLP and ML models. Achieved 92% accuracy in skill matching.",
-    tech: ["Python", "FastAPI", "React", "spaCy", "scikit-learn", "Docker"],
-    image: "/projects/resume-analyzer.jpg",
+    description: "A full-stack application that uses NLP and computer vision to analyze resumes, extract skills, and provide feedback for improvement. Built with FastAPI backend and React frontend.",
+    tech: ["Python", "FastAPI", "React", "TensorFlow", "AWS S3", "Docker"],
+    image: "https://via.placeholder.com/400x300/8b5cf6/ffffff?text=Resume+Analyzer",
     github: "https://github.com/abhinavpadige/resume-analyzer",
-    demo: "https://resume-analyzer.vercel.app"
+    live: "https://resume-analyzer.vercel.app"
   },
   {
     id: 2,
-    title: "Real-Time Stock Predictor",
-    description: "Developed a LSTM-based deep learning model for predicting stock prices with real-time data ingestion from Yahoo Finance API. Deployed on AWS EC2 with auto-scaling.",
-    tech: ["Python", "TensorFlow", "LSTM", "AWS", "EC2", "Docker", "REST API"],
-    image: "/projects/stock-predictor.jpg",
-    github: "https://github.com/abhinavpadige/stock-predictor",
-    demo: "https://stock-predictor.abhinavpadige.me"
+    title: "Real-Time Stock Prediction Dashboard",
+    description: "A dashboard that predicts stock prices using LSTM neural networks and visualizes trends with real-time data streaming. Deployed on Azure Kubernetes Service.",
+    tech: ["Python", "PyTorch", "LSTM", "Azure AKS", "Plotly Dash", "Redis"],
+    image: "https://via.placeholder.com/400x300/a855f7/ffffff?text=Stock+Prediction",
+    github: "https://github.com/abhinavpadige/stock-prediction",
+    live: "https://stock-dashboard.azurewebsites.net"
   },
   {
     id: 3,
-    title: "Smart Campus Assistant",
-    description: "Created a multilingual chatbot using Azure Cognitive Services and Dialogflow to help students with campus queries. Integrated with college ERP system.",
-    tech: ["Azure", "Dialogflow", "Node.js", "TypeScript", "REST API", "Cosmos DB"],
-    image: "/projects/campus-assistant.jpg",
-    github: "https://github.com/abhinavpadige/campus-assistant",
-    demo: "https://campus-assistant.abhinavpadige.me"
+    title: "Voice-Controlled Smart Home Assistant",
+    description: "An IoT system that controls home appliances via voice commands using speech recognition and custom wake word detection. Integrated with Alexa and Google Assistant.",
+    tech: ["Python", "TensorFlow Lite", "Raspberry Pi", "MQTT", "AWS IoT Core", "Docker"],
+    image: "https://via.placeholder.com/400x300/7c3aed/ffffff?text=Smart+Home+Assistant",
+    github: "https://github.com/abhinavpadige/smart-home-assistant",
+    live: "#"
   },
   {
     id: 4,
-    title: "FinTech Fraud Detection System",
-    description: "Implemented an ensemble ML model (XGBoost + Isolation Forest) to detect fraudulent transactions in real-time. Reduced false positives by 37%.",
-    tech: ["Python", "XGBoost", "Isolation Forest", "Kafka", "Spark", "Azure ML"],
-    image: "/projects/fraud-detection.jpg",
-    github: "https://github.com/abhinavpadige/fraud-detection",
-    demo: "https://fraud-detection.abhinavpadige.me"
+    title: "Medical Image Segmentation with U-Net",
+    description: "Deep learning model for segmenting tumors in MRI scans using U-Net architecture. Achieved 94.2% Dice coefficient on BraTS dataset.",
+    tech: ["Python", "PyTorch", "U-Net", "OpenCV", "AWS SageMaker", "MLflow"],
+    image: "https://via.placeholder.com/400x300/6d28d9/ffffff?text=Medical+Segmentation",
+    github: "https://github.com/abhinavpadige/medical-segmentation",
+    live: "#"
   }
 ];
 
 const Projects: React.FC = () => {
   return (
-    <section className="py-20">
+    <section id="projects" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
           Projects
         </h2>
         <div className="grid gap-8 sm:grid-cols-1 lg:grid-cols-2">
-          {projects.map(project => (
+          {projects.map((project) => (
             <div
               key={project.id}
-              className="group relative bg-gray-800/50 backdrop-blur-sm border border-white/20 rounded-xl shadow-lg hover:scale-105 transition-transform duration-300 overflow-hidden"
+              className="group relative overflow-hidden rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-purple-900/30 to-gray-900/50">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover opacity-80"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-white mb-3">{project.title}</h3>
-                <p className="text-gray-400 mb-4 line-clamp-3">{project.description}</p>
+                <h3 className="text-xl font-semibold mb-3 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-4 line-clamp-3">{project.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map(tech => (
+                  {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-700/50 text-xs font-medium rounded-full text-purple-300"
+                      className="px-3 py-1 text-xs font-medium bg-white/10 rounded-full border border-white/20"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex space-x-3">
+                <div className="flex gap-3">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 bg-gray-700/50 hover:bg-gray-600/70 text-white rounded-lg transition-colors border border-white/20"
+                    className="flex-1 px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition-colors border border-white/20"
                   >
                     GitHub
                   </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-colors"
-                  >
-                    Live Demo
-                  </a>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-colors border border-transparent"
+                    >
+                      Live Demo
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
