@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -22,6 +21,8 @@ module.exports = {
         },
         accent: {
           500: '#a855f7',
+          600: '#9333ea',
+          700: '#7e3af2',
         }
       },
       boxShadow: {
