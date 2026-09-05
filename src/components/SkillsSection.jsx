@@ -21,7 +21,7 @@ const SkillsSection = () => {
           {skills.map((skill, index) => (
             <span
               key={index}
-              className="bg-white/10 backdrop-blur-sm rounded-xl px-4 py-2 border border-white/20 text-sm font-medium text-gray-200 transition-all duration-300 hover:scale-105 hover:bg-white/20 hover:border-white/30"
+              className="bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium text-white/90 border border-white/20 hover:bg-white/20 transition-all duration-300 transform hover:-translate-y-1"
             >
               {skill}
             </span>
