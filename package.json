@@ -1,23 +1,13 @@
 {
-  "name": "abhinav-padige-portfolio",
+  "name": "abhinav-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website for Abhinav Padige - AI Engineer & Full Stack Developer",
+  "description": "Personal portfolio website for Abhinav Padige",
   "main": "index.html",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
-  "keywords": [
-    "portfolio",
-    "react",
-    "typescript",
-    "tailwindcss",
-    "vite",
-    "glassmorphism"
-  ],
-  "author": "Abhinav Padige",
-  "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
