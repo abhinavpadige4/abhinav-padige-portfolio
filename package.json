@@ -1,13 +1,26 @@
 {
-  "name": "abhinav-portfolio",
+  "name": "abhinav-padige-portfolio",
   "version": "1.0.0",
-  "description": "Personal portfolio website for Abhinav Padige",
-  "main": "index.html",
+  "description": "Personal portfolio website for Abhinav Padige showcasing skills in Python, ML, DL, FastAPI, Docker, AWS, Azure",
+  "main": "src/main.tsx",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write src"
   },
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "tailwind",
+    "vite",
+    "glassmorphism",
+    "dark-theme"
+  ],
+  "author": "Abhinav Padige",
+  "license": "MIT",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -16,10 +29,13 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^4.0.0",
-    "autoprefixer": "^10.4.14",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2",
-    "typescript": "^5.0.2",
-    "vite": "^4.4.0"
+    "autoprefixer": "^10.4.13",
+    "eslint": "^8.29.0",
+    "eslint-plugin-react": "^7.31.11",
+    "postcss": "^8.4.21",
+    "prettier": "^2.8.0",
+    "tailwindcss": "^3.2.4",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
   }
 }
