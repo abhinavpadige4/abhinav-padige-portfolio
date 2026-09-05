@@ -1,116 +1,92 @@
-# Abhinav Padige - Personal Portfolio Website
+# Abhinav Padige Portfolio
 
-A modern, dark-themed portfolio website showcasing Abhinav Padige's expertise as an AI Engineer and Full Stack Developer. Built with React, TypeScript, Tailwind CSS, and Vite, featuring glassmorphism design, smooth animations, and responsive layout.
+A modern, dark-themed personal portfolio website built with React 18, TypeScript, Tailwind CSS, and Vite. Features glassmorphism design, smooth animations, and a clean layout showcasing skills, projects, and experience.
 
 ## 🚀 Features
 
-- **Dark Theme with Gradients**: Sophisticated purple-to-pink gradient accents on a dark background
-- **Glassmorphism Design**: Semi-transparent cards with backdrop blur for a modern, premium feel
-- **Smooth Animations**: Subtle hover effects, scale transitions, and focus states
-- **Fully Responsive**: Optimized for all device sizes from mobile to desktop
-- **Interactive Contact Form**: Functional form with validation and status feedback
-- **Social Media Integration**: Direct links to GitHub and LinkedIn profiles
-- **Performance Optimized**: Built with Vite for fast development and production builds
+- **Dark Theme with Gradients**: Sophisticated dark background with purple gradient accents
+- **Glassmorphism Design**: Frosted glass cards with backdrop blur and subtle borders
+- **Smooth Animations**: Fade-in-up sections, hover lift effects, and smooth scrolling
+- **Responsive Layout**: Optimized for all device sizes
+- **Download Resume**: Direct CTA to download resume from Hero section
+- **Tech Stack Showcase**: Skills badges for Python, ML, DL, FastAPI, Docker, AWS, Azure
+- **Project Showcase**: Interactive project cards with GitHub/demo links
+- **Contact Form**: Glassmorphism form for reaching out
 
 ## 🛠️ Tech Stack
 
 - **Framework**: React 18
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Build Tool**: Vite
-- **Icons**: Heroicons (via inline SVG)
-- **Deployment**: Vercel
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 3
+- **Build Tool**: Vite 4
+- **Icons**: Heroicons (via Tailwind)
+- **Deploy**: Vercel
 
-## 📁 Project Structure
+## 📦 Installation
 
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/abhinav-padige-portfolio.git
+cd abhinav-padige-portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
-src/
-├── components/
-│   ├── ContactSection.jsx
-│   ├── AboutSection.jsx
-│   ├── EducationSection.jsx
-│   ├── HeroSection.jsx
-│   ├── SkillsSection.jsx
-│   └── ProjectsSection.jsx
-├── App.tsx
-├── main.tsx
-└── index.css
-```
-
-## 🔧 Setup Instructions
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd abhinav-portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-   Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-4. **Build for production**
-   ```bash
-   npm run build
-   ```
-
-5. **Preview production build**
-   ```bash
-   npm run preview
-   ```
-
-## 🌐 Deployment
-
-This project is configured for easy deployment to Vercel:
-
-1. Push code to GitHub repository
-2. Import project in Vercel dashboard
-3. Vercel will automatically detect the Vite/React setup and deploy
-4. Custom domain can be configured in Vercel settings
 
 ## 🎨 Design System
 
 ### Colors
-- **Primary Gradient**: `from-purple-600 to-pink-600` (hover: `from-purple-500 to-pink-500`)
-- **Background**: `bg-gray-900` (dark theme)
-- **Glassmorphism**: `bg-white/10 backdrop-blur-sm border border-white/20`
-- **Text**: `text-white` primary, `text-gray-300/400` secondary
-- **Accents**: Purple (`#a855f7`) and pink gradients throughout
+- **Primary**: `#a855f7` (Violet)
+- **Secondary**: `#c084fc` (Light Violet)
+- **Accent**: `#e9d5ff` (Lavender)
+- **Background**: `#0f172a` (Navy Dark)
+- **Glass**: `rgba(15, 23, 42, 0.6)`
 
 ### Components
-- **Cards**: `rounded-lg bg-white/10 backdrop-blur-sm border border-white/20`
-- **Buttons**: Gradient background with hover scale and focus rings
-- **Inputs**: Dark background with subtle borders and focus rings
-- **Transitions**: `transition-all duration-300` for smooth interactions
+- **Glass Cards**: `bg-[rgba(15,23,42,0.6)] backdrop-blur-sm border border-white/20 shadow-glass`
+- **Gradient Text**: `bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent`
+- **Hover Lift**: `hover:-translate-y-2 hover:shadow-xl transition-transform duration-300`
+- **Fade-in Animation**: `animate-fade-in-up` with delay utilities
 
 ## 📱 Responsive Breakpoints
 
-- **Mobile**: < 640px - Single column layout
-- **Tablet**: 640px - 1024px - Adaptive grid spacing
-- **Desktop**: > 1024px - Full grid layout with max-width containers
+- Mobile: < 640px
+- Tablet: 640px - 1024px
+- Desktop: > 1024px
 
-## 🤝 Contact
+## 🚀 Deployment
 
-- **GitHub**: [https://github.com/abhinavpadige](https://github.com/abhinavpadige)
-- **LinkedIn**: [https://linkedin.com/in/abhinavpadige](https://linkedin.com/in/abhinavpadige)
-- **Email**: Available through the contact form
+This project is configured for easy deployment to Vercel:
 
-## 📄 License
+1. Push to GitHub
+2. Import project in Vercel
+3. Vercel auto-detects Vite/Rocket configuration
+4. Deploy with zero configuration
 
-This project is open source and available under the [MIT License](LICENSE).
+## 📄 Resume
+
+The resume is available for download from the Hero section. It's hosted externally (e.g., Google Drive) and linked via the CTA button.
 
 ## 🙏 Acknowledgments
 
 - Inspired by modern portfolio designs
 - Built with ❤️ using React and Tailwind CSS
-- Deployed on Vercel for optimal performance
-```
+- Icons from Heroicons
 
-Note: Replace `<repository-url>` with your actual GitHub repository URL when publishing. The contact form currently simulates submission - for production use, connect to a backend service or use a form handling service like Formspree, Getform, or Vercel Serverless Functions.
+## 📧 Contact
+
+For inquiries, please use the contact form on the website or reach out directly.
+
+---
+
+*Built by Abhinav Padige | © 2023 All Rights Reserved*
+EOF
